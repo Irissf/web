@@ -1,0 +1,83 @@
+:root{
+    --turquese:#9DAB86;
+    --turquese-gray:#D7C79E;
+    --brown-light:#E08F62;
+    --brown-dark:#A35638;
+}
+
+//para que no se sumen los tamaños de dentro con lso de fuera
+html{
+    box-sizing: border-box;
+    font-size: 80%;
+}
+*,*:before,*:after{
+    box-sizing: inherit;
+}
+// _______________________________________________________
+
+body{
+    font-family: 'Mukta', sans-serif;
+    background-color: var(--turquese-gray);
+
+}
+
+.flex{
+    display: flex;
+    justify-content: center;//centra a lo ancho
+    align-items: center;//centra a lo alto, necesita un heigth
+    height: 100vh; //vh toma el tamaño de nuestra pantalla
+}
+
+.card{
+    background-color: white;
+    width: 350px;
+    border-radius: 20px;
+    overflow: hidden; //Con esto se ajustan los bordes de las imágenes
+    //aunque solo visualmente
+    box-shadow: 0px 0px 15px var(--brown-dark);
+    &-header{
+        width: 100%;//ajustamos la imagen al 100% del ancho disponible
+        display: block;
+    }
+    &-body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-bottom: 1px solid var(--turquese);
+        &-img{
+            width: 150px;
+            border:6px solid white;
+            border-radius: 100%;
+            margin-top: calc(-75px - 6px); //subimos la mitad del tamaño de la imagen más el margen
+        }
+        &-title{
+            //vendria a ser el card-body-tittle
+            font-size: 1.8em;
+            span{
+                color: var(--brown-dark);
+                font-weight: normal;
+            }
+        }
+        &-text{
+            color: var(--brown-dark);
+            font-size: 1.6em;
+            margin-top: 0;
+            margin-bottom: 2em;
+        }
+    }
+    &-footer{
+        display: flex;
+        justify-content: space-around;
+        &-social{
+            text-align: center;
+            margin-bottom: 2em;
+            margin-top:2em;
+            p{
+                letter-spacing: 1px;
+                color: var(--brown-dark);
+            }
+        }
+    }
+}
+
+
